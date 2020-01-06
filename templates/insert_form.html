@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Insert Form</title>
+     <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+<style>
+    .container{
+        border: 2px solid red;
+        background-color: aqua;
+    }
+    h3{
+        text-align: center;
+        color: red;
+    }
+    a{
+        color: mediumvioletred;
+    }
+</style>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+            <form method="POST">
+                {% csrf_token %}
+                <h3>Inserting Your Data</h3>
+                <label>Enter Your Product ID:</label>
+                <input type="number" name="pid" class="form-control" required>
+
+                <label>Enter Your Product Name:</label>
+                <input type="text" name="pname" class="form-control" required>
+
+                <label>Enter Your Product Class:</label>
+                <input type="text" name="pclass"  value="high"  class="form-control" readonly required>
+
+                <label>Enter Your Product Cost:</label>
+                <input type="number" name="pcost" class="form-control" required>
+
+                <label>Enter Your Number Of Product:</label>
+                <input type="number" name="pnop" class="form-control" required>
+
+                <label>Enter Your Product Manufacture Date:</label>
+                <input type="date" name="pmdate" class="form-control" required>
+
+                <label>Enter Your Product Expiry Date:</label>
+                <input type="date" name="pedate" class="form-control" required>
+
+                <label>Enter Customer Name:</label>
+                <input type="text" name="cname" class="form-control" required>
+
+                <label>Enter Customer Mobile Number:</label>
+                <input type="number" name="mobile" class="form-control" required>
+
+                <label>Enter Customer Email ID:</label>
+                <input type="email" name="email" class="form-control" required>
+                <center>
+                    <input type="submit" value="Send" class="btn btn-success">
+                    <input type="reset" value="clear" class="btn btn-danger">
+                </center>
+            </form>
+            <center><a href="/#/">GoTo Home</a></center>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

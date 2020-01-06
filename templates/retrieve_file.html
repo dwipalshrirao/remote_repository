@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Retrieve File</title>
+     <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+<style>
+    .container{
+        background-color: aqua;
+        border: 2px solid red;
+    }
+    h3{
+        text-align: center;
+    }
+    table{
+        padding: 5px 5px;
+    }
+</style>
+<body>
+<div class="container">
+    <div class="row">
+            <h3>Products Details</h3>
+            <form method="post">
+
+                {% csrf_token %}
+                {% if pdata %}
+                    <center>
+                <table border="2px">
+                    <tr>
+                        <th>Product ID</th>
+                        <th>Product Name</th>
+                        <th>Product Cost</th>
+                        <th>Product Class</th>
+                        <th>No_of_Product</th>
+                        <th>Manufacture Date</th>
+                        <th>Expiry Date</th>
+                        <th>Customer Name</th>
+                        <th>Mobile</th>
+                        <th>Email</th>
+                    </tr>
+                       {% for i in pdata %}
+                       <tbody>
+                       <tr>
+                        <td>{{ i.product_id}}</td>
+                        <td>{{ i.product_name}}</td>
+                        <td>{{ i.product_cost}}</td>
+                        <td>{{ i.product_class}}</td>
+                        <td>{{ i.no_of_product}}</td>
+                        <td>{{ i.manufacturare_date}}</td>
+                        <td>{{ i.expirydate}}</td>
+                        <td>{{ i.customer_name}}</td>
+                        <td>{{ i.mobile}}</td>
+                        <td>{{ i.Email}}</td>
+                       </tr>
+                       </tbody>
+                    {% endfor %}
+                </table>
+                    </center>
+            {% endif %}
+
+
+            </form>
+
+        </div>
+    </div>
+</div>
+<center><a href="/#/">GoTo Home</a></center>
+</body>
+</html>
